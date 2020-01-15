@@ -24,10 +24,10 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
@@ -48,16 +48,16 @@
 
   <meta name="description" content="Command Line 列出目录下的所有文件夹的及文件，规整  ls -laR &#x2F;etc&#x2F;X11&#x2F;   查看安装的驱动 inxi -G   查看各文件大小 du [-abcDhHklmsSx] [-L &lt;符号连接&gt;][-X &lt;文件&gt;][—block-size][—exclude&#x3D;&lt;目录或文件&gt;] [—max-depth&#x3D;&lt;目录层数&gt;][—help]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="command">
+<meta property="og:title" content="Manjaro command line">
 <meta property="og:url" content="https://seiifuu.github.io/2020/01/15/command/index.html">
 <meta property="og:site_name" content="伪造菌群の博客">
 <meta property="og:description" content="Command Line 列出目录下的所有文件夹的及文件，规整  ls -laR &#x2F;etc&#x2F;X11&#x2F;   查看安装的驱动 inxi -G   查看各文件大小 du [-abcDhHklmsSx] [-L &lt;符号连接&gt;][-X &lt;文件&gt;][—block-size][—exclude&#x3D;&lt;目录或文件&gt;] [—max-depth&#x3D;&lt;目录层数&gt;][—help]">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
-<meta property="article:published_time" content="2020-01-15T07:51:54.543Z">
-<meta property="article:modified_time" content="2020-01-15T07:51:54.543Z">
+<meta property="article:published_time" content="2020-01-14T15:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-15T09:08:26.248Z">
 <meta property="article:author" content="WZJQ">
-<meta property="article:tag" content="Deep Learning">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png">
 
@@ -73,7 +73,7 @@
   };
 </script>
 
-  <title>command | 伪造菌群の博客</title>
+  <title>Manjaro command line | 伪造菌群の博客</title>
   
 
 
@@ -189,10 +189,7 @@
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
   <a href="https://github.com/seiifuu" class="github-corner" title="WZJQ GitHub" aria-label="WZJQ GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
@@ -213,7 +210,7 @@
     <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/15/command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="WZJQ">
       <meta itemprop="description" content="Brave!">
     </span>
@@ -223,7 +220,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          command
+          Manjaro command line
         </h1>
 
         <div class="post-meta">
@@ -232,8 +229,20 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-01-15 16:51:54" itemprop="dateCreated datePublished" datetime="2020-01-15T16:51:54+09:00">2020-01-15</time>
+              <time title="创建时间：2020-01-15 00:00:00 / 修改时间：18:08:26" itemprop="dateCreated datePublished" datetime="2020-01-15T00:00:00+09:00">2020-01-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -387,17 +396,20 @@ pactree package_name          # 显示软件的依赖树</code></p>
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/01/15/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/15/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -463,6 +475,8 @@ pactree package_name          # 显示软件的依赖树</code></p>
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="WZJQ"
+      src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">WZJQ</p>
   <div class="site-description" itemprop="description">Brave!</div>
 </div>
@@ -475,12 +489,39 @@ pactree package_name          # 显示软件的依赖树</code></p>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/seiifuu" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;seiifuu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fuuseii1222@gmail.com" title="E-Mail → mailto:fuuseii1222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/1694010823" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;1694010823" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+      </span>
+  </div>
 
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -538,6 +579,8 @@ pactree package_name          # 显示软件的依赖树</code></p>
 
 
 <script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
