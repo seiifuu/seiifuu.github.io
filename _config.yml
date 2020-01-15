@@ -6,13 +6,13 @@
 title: 僞造菌群のBlog
 subtitle: 'WZJQ‘s blog'
 description: 'Brave!'
-keywords: "Deep Learning"
-author: WZJQ
+keywords: "voice conversion, accent conversion"
+author: WZJQ 
 language: en 
 timezone: 
 
 # Comment Support
-disqus_shortname: seiifuu
+#disqus_shortname: seiifuu
 
 #Search
 search:
