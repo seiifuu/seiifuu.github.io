@@ -1,3 +1,11 @@
+---
+title: Manjaro command line
+date: 2020-01-15
+tags:
+- Linux
+categories:
+- Linux
+---
 ## Command Line
 
 - 列出目录下的所有文件夹的及文件，规整 
