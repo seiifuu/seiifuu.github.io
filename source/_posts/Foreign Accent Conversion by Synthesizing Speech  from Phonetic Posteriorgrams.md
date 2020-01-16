@@ -32,9 +32,9 @@ categories:
 
 ### 00. 图片
 
-![](/home/fuu/arch/typ_tmp/screenshot-web.kamihq.com-2020.01.png)
+![](/images/FAC1.png)
 
-<img src="/home/fuu/arch/typ_tmp/screenshot-web.q.com-2020.01.png" style="zoom: 80%;" />
+<img src="/images/FAC2.png" style="zoom: 80%;" />
 
 ### 1. 概述
 
@@ -88,7 +88,7 @@ PPG已应用于许多任务，例如，基于神经网络的语音识别[20，21
 
 {1-4}它还在解码器之后应用了PostNet（multiple 1-D convolutional  layers）用于预测频谱细节并将其添加到原始预测中。{右橙↑4}
 
-> {1} Tacotron 2理论![img](/home/fuu/arch/typ_tmp/20190212211055433.jpg)
+> {1} Tacotron 2理论![img](/images/20190212211055433.jpg)
 
 ​		{2}在这里的工作中，我们使用(包含two fully connected hidden layers with the ReLU nonlinearity)<u>PPG-embedding network (PPG PreNet)</u>替代<u>character-embedding layer</u>。这个PPG-embedding network 与Tacotron 2中的PreNet相似，将原始输入的高维度的PPGs变换为低维度的bottleneck  features。这一步对模型的收敛至关重要。PPG2Mel 转换模型详见Figure 2。
 
@@ -100,27 +100,27 @@ PPG已应用于许多任务，例如，基于神经网络的语音识别[20，21
 
 这里的$s_{i-1}$是attention LSTM第(i-1)步的hidden state，$g_i$是attention context,
 
-![](/home/fuu/arch/typ_tmp/f2.png)
+![](/images/f2.png)
 
-![](/home/fuu/arch/typ_tmp/f3.png)
+![](/images/f3.png)
 
 都是attention weights。attention scores $e_{ij}$计算方法如下
 
-![](/home/fuu/arch/typ_tmp/f4.png)
+![](/images/f4.png)
 
 这里 $v, W, V, U, b$ 都是attention module的可学习参数（learnable parameters）。$F$ 包含$k$个一维(1-D)可学习的带有$r$-dims的内核，$f_i^j ∈ R^k$ 是在$j$ 位置上将 $F$ 与 $a_{i-1}$ 卷积的结果。
 
 现在，为了<u>实施局部性约束</u>，我们只考虑以当前帧为中心的固定窗口中的隐藏表示，例如：
 
-![](/home/fuu/arch/typ_tmp/f5.png)
+![](/images/f5.png)
 
 这里的$w$ 是窗口大小，接着
 
-![](/home/fuu/arch/typ_tmp/f6.png)
+![](/images/f6.png)
 
 PPG2Mel模型的损失函数如下：
 
-![](/home/fuu/arch/typ_tmp/f7.png)
+![](/images/f7.png)
 
 这里$G_{mel}$ 是真实值的mel-spectrogram；$P_{Decoder}$ 和$P_{PostNet}$ 是分别来自decoder（after linear projection) 和PostNet。$G_{stop}$ 是真实的stop token，$P_{stop}$ 是预测的stop token；$CE(∙)$ 是交叉熵损失；$\alpha, \beta, \gamma$ 控制每个损失项的相对重要性。
 
@@ -148,7 +148,7 @@ PPG2Mel模型的损失函数如下：
 
 对于<u>WaveGlow模型</u>，我们根据[14]的建议在训练过程中将 $\sigma$ 设置为0.701，在测试过程中将 $\sigma$ 设置为0.6。 批次大小为3，学习率为1×10 -4。 训练模型直到收敛（约一天）。 所有模型都在单个Nvidia GTX 1070 GPU上进行了训练。
 
-<img src="/home/fuu/arch/typ_tmp/screenshot-web.kamihq.com-222020.01.png" style="zoom: 67%;" />
+<img src="/images/FACt1.png" style="zoom: 67%;" />
 
 使用Kaldi训练AM，及其他模型用PyTorch上实现，使用Adam optimizer训练。更多细节和音频样本，请参考https://github.com/guanlongzhao/fac-via-ppg。
 
@@ -166,17 +166,17 @@ PPG2Mel模型的损失函数如下：
 
 音频质量和自然度的MOS测试的分数是五分制的（1-bad, 2-poor,  3-fair,  4-good, 5-excellent）。音频质量和自然度的MOS分别描述了语音的清晰度和与人类的相似度。这两个测量是从不重叠的听众群体中获得的，以避免偏见。每个音频样本至少收到17个分数。听众还将对同一组北极和L2北极原始录音进行评分以作为参考。结果汇总在**Table 2.**和**Table 3.**中。值得注意的是，在[9]中，我们确定了基线系统的音频质量MOS比使用DTW进行帧配对的传统JD-GMM系统大约高0.4。因此，我们的基线比传统的JD-GMM更强。
 
-<img src="/home/fuu/arch/typ_tmp/df.png" style="zoom:67%;" />
+<img src="/images/df.png" style="zoom:67%;" />
 
 在所有情况下，我们的系统在音质和自然度方面都明显优于基线。尽管这两个系统的音频质量MOS都要低于原始记录(语料库的原始音频)，但在自然度MOS上，无论是ARCTIC（$p$=0.35）还是L2-ARCTIC（$p$=0.54），使用双尾双样本t检验，提出的系统都没有显著差异。
 
 在语音相似性测试中，给听者提供了三个话语，即原始的非母语话语和来自两个系统的合成语，并要求他们选择哪一个合成语听起来更像非母语者。参与者还被要求在做出选择时，用7分制（1分表示完全不自信，7分表示极度自信）来评定他们的置信水平。参与者被要求在执行任务时忽略口音。在每次试验中，来自两个系统的样本的呈现顺序是平衡的，17名参与者对音频样本进行评级。结果见**Table 4.**。在72.47%的案例中，听者以3.4的置信水平（高于“somewhat  confident”）选择提议的系统，而在其余27.53%的案例中，听者以低很多的置信评分（1.05，或“完全不置信”）选择基线系统。
 
-![](/home/fuu/arch/typ_tmp/sf6.png)
+![](/images/sf6.png)
 
 在口音测试中，参与者被要求用九分制（1分为非外国口音，9分为非常强的外国口音）对外国口音的程度进行评分，这是发音文献中常用的方法[43]。每个音频样本由18个人评分。结果汇总在表5中。ARCTIC 说话者的原始话语被评为“没有外国口音”（1.20），而L2-ARCTIC 说话者的原始话语被评为重口音（7.17）。基线系统（2.94）和提议的系统（3.93）与第二语言北极语相比显著降低了外国口音，但被评为比本国口音更重。令人惊讶的是，我们的系统生成的语音被评为比基线系统更重的口音；有关此结果的潜在解释，请参见讨论部分。
 
-![](/home/fuu/arch/typ_tmp/fa6.png)
+![](/images/fa6.png)
 
 ### 5. 讨论与结论
 
