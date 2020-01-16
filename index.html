@@ -204,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/16/[%E8%AF%91]Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/">
+    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/16/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -218,7 +218,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/16/%5B%E8%AF%91%5DForeign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/" class="post-title-link" itemprop="url">Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019</a>
+            <a href="/2020/01/16/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/" class="post-title-link" itemprop="url">Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019</a>
         </h1>
 
         <div class="post-meta">
@@ -229,7 +229,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-01-16 00:00:00 / Modified: 16:32:36" itemprop="dateCreated datePublished" datetime="2020-01-16T00:00:00+09:00">2020-01-16</time>
+              <time title="Created: 2020-01-16 00:00:00 / Modified: 17:24:14" itemprop="dateCreated datePublished" datetime="2020-01-16T00:00:00+09:00">2020-01-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,8 +266,8 @@
 <p>{注3}转换部分：输入non-native语音片段，得到与母语口音更相似的新片段。</p>
 </blockquote>
 <p><strong>关键字：</strong>phonetic  posteriorgram,  acoustic  modeling, speech synthesis, accent conversion </p>
-<h3 id="00-图片"><a href="#00-图片" class="headerlink" title="00. 图片"></a>00. 图片</h3><p><img src="/home/fuu/arch/typ_tmp/screenshot-web.kamihq.com-2020.01.png" alt=""></p>
-<p><img src="/home/fuu/arch/typ_tmp/screenshot-web.q.com-2020.01.png" style="zoom: 80%;" /></p>
+<h3 id="00-图片"><a href="#00-图片" class="headerlink" title="00. 图片"></a>00. 图片</h3><p><img src="/images/FAC1.png" alt=""></p>
+<p><img src="/images/FAC2.png" style="zoom: 80%;" /></p>
 <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>FAC的目标是创造一个新的声音用于被给的非母语者的音质{1}及母语者的发音模式（如，韵律和停顿）。它可以通过结合来自母语语音片段的口音相关特征<u>(accent-related  cues, arc)</u>和非母语者的音质来实现。FAC可以应用于电脑辅助的发音训练，在其中充当模型声音用于模仿。</p>
 <p>FAC的主要挑战是如何从语音信号中分离arc与音质。已有多种解决方案被提出，包括语音变形[3，6-8]、帧配对[1，9]和发音合成[2，10-12]。这些方法可以减少非母语者的口音，但都有许多局限。<u>语音变形</u>合成的语音常常听起来像是不同于任何说话者的第三者说的。<u>帧配对</u>方法可以合成类似于非母语者语音的语音，但合成保留了母语者音质的某些方面；这是因为母语者的激励信息（excitation information）被用在了语音合成中。最后，<u>发音合成</u>需要专门的设备来收集发音数据，因此在实际应用中并不实用。</p>
 <blockquote>
@@ -297,7 +297,7 @@
 <p>{1-3}Decoder在将预测的mel谱图传递给attention之前附加一个PreNet（two fully connected  layers），而后decoder LSTM提取结构信息。{右橙↑1,2}</p>
 <p>{1-4}它还在解码器之后应用了PostNet（multiple 1-D convolutional  layers）用于预测频谱细节并将其添加到原始预测中。{右橙↑4}</p>
 <blockquote>
-<p>{1} Tacotron 2理论<img src="/home/fuu/arch/typ_tmp/20190212211055433.jpg" alt="img"></p>
+<p>{1} Tacotron 2理论<img src="/images/20190212211055433.jpg" alt="img"></p>
 </blockquote>
 <p>​        {2}在这里的工作中，我们使用(包含two fully connected hidden layers with the ReLU nonlinearity)<u>PPG-embedding network (PPG PreNet)</u>替代<u>character-embedding layer</u>。这个PPG-embedding network 与Tacotron 2中的PreNet相似，将原始输入的高维度的PPGs变换为低维度的bottleneck  features。这一步对模型的收敛至关重要。PPG2Mel 转换模型详见Figure 2。</p>
 <blockquote>
@@ -306,17 +306,17 @@
 <p>​        {3}原始的Tacotron 2 接收一个字符序列作为输入，显然这要比我们的PPG序列短。例如每一个我们语料库的句子平均包含41个字符，然而PPG序列却有几百帧。因此，原始的Tacotron 2注意机制会被如此长的输入序列所混淆，并导致PPG和声音序列之间的不一致，例如 [15]。结果，推论将是病态的，并且将产生不可理解的语音。{3-1}一种解决该问题的方法是使用更短的PPG序列训练PPG2Mel模型。例如，一种是可以用词组代替句子。然而，这种解决方法有一些问题。首先，为了获得正确的词语边界，我们需要强制对其训练的句子，这需要获取转码。第二，更重要的是，使用短片段训练进行长输入序列的预测会导致模型失败，例如[33]。</p>
 <p>​        <u>{3-2}我们通过在注意机制中添加一个局部约束来解决这个问题</u>。语音信号具有很强的时间连续性和渐进性。为来抓取语音上下文，我们只需要在局部的小窗口中观察PPGs。受此启发，在训练过程中的每一个解码步骤中，我们都将注意力机制限制为查看隐藏状态序列中的窗口，而不是查看完整序列。我们正式定义这个约束如下。定义$d_i$为decoder LSTM的第$i$步输出，$y_i$为预测出的声学特征(是对$d_i$应用线性投影后的output)，$h = [h_1,…,h_T]$是来自encoder的hidden states的整个序列。应用局部敏感的注意机制，我们得到，<img src="/home/fuu/arch/typ_tmp/f1.png" alt=""></p>
 <p>这里的$s_{i-1}$是attention LSTM第(i-1)步的hidden state，$g_i$是attention context,</p>
-<p><img src="/home/fuu/arch/typ_tmp/f2.png" alt=""></p>
-<p><img src="/home/fuu/arch/typ_tmp/f3.png" alt=""></p>
+<p><img src="/images/f2.png" alt=""></p>
+<p><img src="/images/f3.png" alt=""></p>
 <p>都是attention weights。attention scores $e_{ij}$计算方法如下</p>
-<p><img src="/home/fuu/arch/typ_tmp/f4.png" alt=""></p>
+<p><img src="/images/f4.png" alt=""></p>
 <p>这里 $v, W, V, U, b$ 都是attention module的可学习参数（learnable parameters）。$F$ 包含$k$个一维(1-D)可学习的带有$r$-dims的内核，$f<em>i^j ∈ R^k$ 是在$j$ 位置上将 $F$ 与 $a</em>{i-1}$ 卷积的结果。</p>
 <p>现在，为了<u>实施局部性约束</u>，我们只考虑以当前帧为中心的固定窗口中的隐藏表示，例如：</p>
-<p><img src="/home/fuu/arch/typ_tmp/f5.png" alt=""></p>
+<p><img src="/images/f5.png" alt=""></p>
 <p>这里的$w$ 是窗口大小，接着</p>
-<p><img src="/home/fuu/arch/typ_tmp/f6.png" alt=""></p>
+<p><img src="/images/f6.png" alt=""></p>
 <p>PPG2Mel模型的损失函数如下：</p>
-<p><img src="/home/fuu/arch/typ_tmp/f7.png" alt=""></p>
+<p><img src="/images/f7.png" alt=""></p>
 <p>这里$G<em>{mel}$ 是真实值的mel-spectrogram；$P</em>{Decoder}$ 和$P<em>{PostNet}$ 是分别来自decoder（after linear projection) 和PostNet。$G</em>{stop}$ 是真实的stop token，$P_{stop}$ 是预测的stop token；$CE(∙)$ 是交叉熵损失；$\alpha, \beta, \gamma$ 控制每个损失项的相对重要性。</p>
 <blockquote>
 <p>{3}由于序列过长导致注意力机制出错</p>
@@ -331,7 +331,7 @@
 </blockquote>
 <p>在<strong>Table 1.</strong>中总结了<u>PPG2Mel模型</u>的参数。我们使用6的批量大小(batch size)和1×10 -4的学习率(learning rate)。 $\alpha,\beta,\gamma$ 分别根据经验设置为1.0、1.0和0.005。 注意机制的局部性约束的窗口大小 $\omega$ 设置为20。我们训练模型，直到验证损失达到平稳（〜8h）。 </p>
 <p>对于<u>WaveGlow模型</u>，我们根据[14]的建议在训练过程中将 $\sigma$ 设置为0.701，在测试过程中将 $\sigma$ 设置为0.6。 批次大小为3，学习率为1×10 -4。 训练模型直到收敛（约一天）。 所有模型都在单个Nvidia GTX 1070 GPU上进行了训练。</p>
-<p><img src="/home/fuu/arch/typ_tmp/screenshot-web.kamihq.com-222020.01.png" style="zoom: 67%;" /></p>
+<p><img src="/images/FACt1.png" style="zoom: 67%;" /></p>
 <p>使用Kaldi训练AM，及其他模型用PyTorch上实现，使用Adam optimizer训练。更多细节和音频样本，请参考<a href="https://github.com/guanlongzhao/fac-via-ppg。" target="_blank" rel="noopener">https://github.com/guanlongzhao/fac-via-ppg。</a></p>
 <blockquote>
 <p>{注-2}本段说明了部分模型参数</p>
@@ -345,12 +345,12 @@
 </blockquote>
 <p>我们进行三种听力测试来比较系统的表现： 音频质量和自然度的Mean  Opinion  Score  (MOS) 测试，声音相似度测试，口音测试。所有测试都在Amazon Mechanical Turk上进行，所有的参与者都是美国居民。每一个测试，来自不同系统的每个说话者的25个语句对（总共50个）被随机选择。样本的出现顺序在所有实验中都是随机的。</p>
 <p>音频质量和自然度的MOS测试的分数是五分制的（1-bad, 2-poor,  3-fair,  4-good, 5-excellent）。音频质量和自然度的MOS分别描述了语音的清晰度和与人类的相似度。这两个测量是从不重叠的听众群体中获得的，以避免偏见。每个音频样本至少收到17个分数。听众还将对同一组北极和L2北极原始录音进行评分以作为参考。结果汇总在<strong>Table 2.</strong>和<strong>Table 3.</strong>中。值得注意的是，在[9]中，我们确定了基线系统的音频质量MOS比使用DTW进行帧配对的传统JD-GMM系统大约高0.4。因此，我们的基线比传统的JD-GMM更强。</p>
-<p><img src="/home/fuu/arch/typ_tmp/df.png" style="zoom:67%;" /></p>
+<p><img src="/images/df.png" style="zoom:67%;" /></p>
 <p>在所有情况下，我们的系统在音质和自然度方面都明显优于基线。尽管这两个系统的音频质量MOS都要低于原始记录(语料库的原始音频)，但在自然度MOS上，无论是ARCTIC（$p$=0.35）还是L2-ARCTIC（$p$=0.54），使用双尾双样本t检验，提出的系统都没有显著差异。</p>
 <p>在语音相似性测试中，给听者提供了三个话语，即原始的非母语话语和来自两个系统的合成语，并要求他们选择哪一个合成语听起来更像非母语者。参与者还被要求在做出选择时，用7分制（1分表示完全不自信，7分表示极度自信）来评定他们的置信水平。参与者被要求在执行任务时忽略口音。在每次试验中，来自两个系统的样本的呈现顺序是平衡的，17名参与者对音频样本进行评级。结果见<strong>Table 4.</strong>。在72.47%的案例中，听者以3.4的置信水平（高于“somewhat  confident”）选择提议的系统，而在其余27.53%的案例中，听者以低很多的置信评分（1.05，或“完全不置信”）选择基线系统。</p>
-<p><img src="/home/fuu/arch/typ_tmp/sf6.png" alt=""></p>
+<p><img src="/images/sf6.png" alt=""></p>
 <p>在口音测试中，参与者被要求用九分制（1分为非外国口音，9分为非常强的外国口音）对外国口音的程度进行评分，这是发音文献中常用的方法[43]。每个音频样本由18个人评分。结果汇总在表5中。ARCTIC 说话者的原始话语被评为“没有外国口音”（1.20），而L2-ARCTIC 说话者的原始话语被评为重口音（7.17）。基线系统（2.94）和提议的系统（3.93）与第二语言北极语相比显著降低了外国口音，但被评为比本国口音更重。令人惊讶的是，我们的系统生成的语音被评为比基线系统更重的口音；有关此结果的潜在解释，请参见讨论部分。</p>
-<p><img src="/home/fuu/arch/typ_tmp/fa6.png" alt=""></p>
+<p><img src="/images/fa6.png" alt=""></p>
 <h3 id="5-讨论与结论"><a href="#5-讨论与结论" class="headerlink" title="5. 讨论与结论"></a>5. 讨论与结论</h3><p>提出的AC系统处理的语音要好于基线系统，这得益于它使用了最先进的Seq2Seq模型(a modified Tacotron2)将PPGs转换为Mel-spectrograms，同时使用了一个神经声码器(neural vocoder)直接从mel谱图生成音频信号。该方法利用了语音信号的时变特性，避免了传统的基于信号处理的会降低了合成质量的声码器的使用。我们还提出了一种易于实现的注意机制的局部约束，使PPG-to-Mel模型在话语层面(utterance-level)样本上可训练。请注意，我们的MOS数值低于原始Tacotron 2和WaveGlow纸张中的MOS数值，这主要是因为它们的系统接受了24倍以上的数据训练。<u>提高系统MOS数值的一个未来方向是联合训练PPG-to-Mel和WaveGlow模型。</u>{1}</p>
 <blockquote>
 <p>{1}如何提高MOS值</p>
