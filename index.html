@@ -46,14 +46,14 @@
   };
 </script>
 
-  <meta name="description" content="Brave!">
+  <meta name="description" content="Don&#39;t be afraid !">
 <meta property="og:type" content="website">
-<meta property="og:title" content="僞造菌群のBlog">
+<meta property="og:title" content="僞造菌群">
 <meta property="og:url" content="https://seiifuu.github.io/index.html">
-<meta property="og:site_name" content="僞造菌群のBlog">
-<meta property="og:description" content="Brave!">
+<meta property="og:site_name" content="僞造菌群">
+<meta property="og:description" content="Don&#39;t be afraid !">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="WZJQ">
+<meta property="article:author" content="Fuu">
 <meta property="article:tag" content="voice conversion">
 <meta property="article:tag" content=" accent conversion">
 <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>僞造菌群のBlog</title>
+  <title>僞造菌群</title>
   
 
 
@@ -114,11 +114,10 @@
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">僞造菌群のBlog</span>
+        <span class="site-title">僞造菌群</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <p class="site-subtitle">WZJQ‘s blog</p>
   </div>
 
   <div class="site-nav-toggle">
@@ -204,21 +203,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/16/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/">
+    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/17/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="WZJQ">
-      <meta itemprop="description" content="Brave!">
+      <meta itemprop="name" content="Fuu">
+      <meta itemprop="description" content="Don't be afraid !">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="僞造菌群のBlog">
+      <meta itemprop="name" content="僞造菌群">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/01/16/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/" class="post-title-link" itemprop="url">Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019</a>
+            <a href="/2020/01/17/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/" class="post-title-link" itemprop="url">Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019</a>
         </h1>
 
         <div class="post-meta">
@@ -227,10 +226,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-16 00:00:00 / Modified: 17:54:10" itemprop="dateCreated datePublished" datetime="2020-01-16T00:00:00+09:00">2020-01-16</time>
+              <time title="Created: 2020-01-17 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-17T00:00:00+09:00">2020-01-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-19 10:17:57" itemprop="dateModified" datetime="2020-01-19T10:17:57+09:00">2020-01-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -259,129 +264,113 @@
 <p>[译]从PPGs合成语音进行外国口音转换</p>
 <p>https://www.semanticscholar.org/paper/Foreign-Accent-Conversion-by-Synthesizing-Speech-Zhao-Ding/8386d03827eabc8446883cd16e46ef10d3d318d4</p>
 </blockquote>
-<h3 id="摘要">0. 摘要</h3>
-<p>外国人口音转换(FAC)目标是生成一个语音听起来与被给的非母语者相似，但是拥有母语者的口音。过去的FAC方法在合成时借用了来自参考语句(母语)的激励信息（F0 and aperiodicity; pro-duced by a conventional vocoder）。使用这样的方法，合成的声音保留了母语者声音质量的一些方面。我们展示了一种方法，摒弃了过去使用的Vocoder与母语者的激励(excitation)。我们的方法使用一个在母语者语料上训练的声学模型用于抽取独立于说话者(Speaker-independent)的PPGs，而后训练一个语音合成器将来自非母语者的PPGs映射到对应的谱特征上，该谱特征可以通过一个高质量的神经Vocoder依次转换为声音波形。运行时，我们使用从母语者语句中抽取的PPGs作为参照驱动合成器<sup>{1}</sup>。听力测试表明，与基线系统相比，该系统产生的语音更清晰、更自然、更接近非母语者，同时显著降低了非母语者的感知外国口音。</p>
-<blockquote>
-<p>{1} 用native的PPGs训练合成器</p>
-<p>{注1}模型组成：1. 语音识别模型用于抽取非母语者的PPGs | 2. 语音合成器用于将抽取出的非母语者PPGs合成为与母语者更相似口音的谱 | 3. Vocoder</p>
-<p>{注2}训练部分：SR模型与合成器都使用native数据训练</p>
-<p>{注3}转换部分：输入non-native语音片段，得到与母语口音更相似的新片段。</p>
-</blockquote>
-<p><strong>关键字：</strong>phonetic posteriorgram, acoustic modeling, speech synthesis, accent conversion</p>
-<h3 id="图片">00. 图片</h3>
-<p><img src="/images/FAC1.png" /></p>
-<p><img src="/images/FAC2.png" style="zoom: 80%;" /></p>
-<h3 id="概述">1. 概述</h3>
-<p>FAC的目标是创造一个新的声音用于被给的非母语者的音质{1}及母语者的发音模式（如，韵律和停顿）。它可以通过结合来自母语语音片段的口音相关特征<u>(accent-related cues, arc)</u>和非母语者的音质来实现。FAC可以应用于电脑辅助的发音训练，在其中充当模型声音用于模仿。</p>
-<p>FAC的主要挑战是如何从语音信号中分离arc与音质。已有多种解决方案被提出，包括语音变形[3，6-8]、帧配对[1，9]和发音合成[2，10-12]。这些方法可以减少非母语者的口音，但都有许多局限。<u>语音变形</u>合成的语音常常听起来像是不同于任何说话者的第三者说的。<u>帧配对</u>方法可以合成类似于非母语者语音的语音，但合成保留了母语者音质的某些方面；这是因为母语者的激励信息（excitation information）被用在了语音合成中。最后，<u>发音合成</u>需要专门的设备来收集发音数据，因此在实际应用中并不实用。</p>
-<blockquote>
-<p>{1} In the context of FAC, we use <strong>voice quality</strong> to refer solely the organic aspects of a speaker’s voice, e.g., pitch range, vo-cal tract dimensions.</p>
-<p>{注} FAC的三种传统方法：语音变形[3，6-8]、帧配对[1，9]和发音合成[2，10-12]</p>
-</blockquote>
-<p>在这项工作中，我们建议在不依赖说话者的语音丰富语音嵌入--语音后验图（PPGs）中执行FAC[13]。<u>PPG被定义为每一个语音帧属于一组预先定义好的音素单元 (phonemes or triphones/senones)的后验概率，其包含了语句的语言信息和语音信息。</u> 我们的方法具体工作如下。==第一步==，我们使用独立于说话者的在大型母语语音基础上训练的声学模型为非母语者生成一个PPGs。==随后，==我们构建一个Seq2Seq的语音合成器用于抓取非母语者的音质。这个合成器使用来自非母语者的PPGs序列作为输入，处理得到对应的梅尔谱图(Mel-spectrogram)作为输出。==最后，==我们训练一个神经语音编码器(Vocoder)，WaveGlow，用于将梅尔谱图转化为原始的声学信号。{!!}在测试中，我们向合成器中输入一个来自<u>母语者</u>的PPG序列。输出结果包含母语者的发音模式以及非母语者的音质。提出系统的工作流程总览见Figure 1。</p>
-<blockquote>
-<p>{!!}如果是这样的系统根本没法做到直接去使用</p>
-<p>{注} 也就是说整个训练过程都是一个对说话者音质的建模</p>
-<p>{思考}那如何对单一母语者的重音特点/发音模式建模呢？</p>
-</blockquote>
-<p>该提出的系统有三个优点。首先，它消除了从母语参考语音中借用激励信息(excitation information)的需要，从而防止了母语者语音质量的某些方面渗入到合成语音中。第二，我们的系统不需要任何训练数据来自母语的参考说话者。因此，我们可以在测试中灵活的使用任何参考语音。第三，我们的系统通过一个顺序到顺序的模型捕获上下文信息，该模型在多个任务上显示了最先进的性能，在次帮助下获得了更好的音质。</p>
-<h3 id="相关工作">2. 相关工作</h3>
-<blockquote>
-<p>{机翻}</p>
-</blockquote>
-<p>口音转换的早期尝试使用语音变形[3，6-8]通过混合来自母语和非母语说话者的频谱成分来控制口音的程度。 在[18，19]中，作者使用PSOLA修改了口音语音的持续时间和音高模式。 Aryal和Gutierrez-Osuna [1]修改了语音转换（VC）技术，将动态时间规整（DTW）替换为根据声道长度归一化后基于源和目标帧的MFCC相似度来匹配源和目标帧的技术。 后来， Zhao et al. [9]使用PPG相似度代替MFCC相似度用于配对声帧。</p>
-<p>PPG已应用于许多任务，例如，基于神经网络的语音识别[20，21]，语音检测[13]，发音错误[22]和个性化TTS [23]。 PPG在VC中也引起了很多关注。 Xie et al. [24]将来自目标说话者的PPG划分为群集，然后将来自源说话者的PPG映射到目标说话者的最近群集。 Sun et al. [25]使用PPG进行多对一语音转换。 Miyoshi et al. [26]扩展了基于PPG的VC框架，以包括使用LSTM在源PPG和目标PPG之间的映射。 与不包含PPG映射过程的基准相比，他们获得了更好的语音个性评级，但音频质量较差。Zhang et al. [15]将源说话者的瓶颈特征和梅尔谱图串联起来，然后使用序列到序列模型将源梅尔谱图转换为目标说话者的谱图，最后使用WaveNet [27]恢复语音波形。 声码器。 他们的模型需要并行录音，并且需要为每个扬声器对训练一个新模型。 然后，他们应用文本监督[28]解决了转换后语音中的一些错误发音和伪影。 最近，Zhou et al. [29]采用双语PPG进行跨语言语音转换。</p>
-<h3 id="方法">3. 方法</h3>
-<p>我们的系统由三个主要构建组成；一个独立于说话者的声学模型(acoustic model, AM)用于抽取PPGs，一个非母语说话者的语音合成器用于将PPGs转换为梅尔谱图，和一个WaveGlow声码器用于实施地从梅尔谱生成语音波形。</p>
-<h4 id="am与ppg抽取">3.1. AM与PPG抽取</h4>
-<p>我们使用具有多个隐藏层和p范数非线性的DNN作为AM。我们在一个母语语音语料库上，通过最小化output与由一个预训练的GMM-HMM强制对准器获得的{!}senone label的交叉熵，来训练AM。在母语语音上训练对我们的任务来说是至关重要，因为母语和非母语的帧必须在母语语音空间中匹配。</p>
-<blockquote>
-<p>{!}用的是senone，(phonemes or triphones/senones)</p>
-</blockquote>
-<h4 id="ppg2mel">3.2. PPG2Mel</h4>
-<p>​ 我们使用改良的Tacotron 2 [32]将来自非母语者的PPG转换为它们相应的梅尔频谱图。</p>
-<p>{1-1}原始的Tacotron 2模型采用字符(characters)的one-hot矢量表示(vector representation)，并将其传递到encoder LSTM，后者将其转换为隐藏的表示(hidden representation)，然后将其传递到具有位置敏感注意机制的decoder LSTM [33]，来预测字符的梅尔谱图。{左蓝↑4-&gt;右橙↑2,3}</p>
-<p>{1-2}为了提高模型性能，将character embedding经过多个卷积层后，再输入到enconder LSTM中。{左蓝↑1,2,3layers}</p>
-<p>{1-3}Decoder在将预测的mel谱图传递给attention之前附加一个PreNet（two fully connected layers），而后decoder LSTM提取结构信息。{右橙↑1,2}</p>
-<p>{1-4}它还在解码器之后应用了PostNet（multiple 1-D convolutional layers）用于预测频谱细节并将其添加到原始预测中。{右橙↑4}</p>
-<blockquote>
-<p>{1} Tacotron 2理论<img src="/images/20190212211055433.jpg" alt="img" /></p>
-</blockquote>
-<p>​ {2}在这里的工作中，我们使用(包含two fully connected hidden layers with the ReLU nonlinearity)<u>PPG-embedding network (PPG PreNet)</u>替代<u>character-embedding layer</u>。这个PPG-embedding network 与Tacotron 2中的PreNet相似，将原始输入的高维度的PPGs变换为低维度的bottleneck features。这一步对模型的收敛至关重要。PPG2Mel 转换模型详见Figure 2。</p>
-<blockquote>
-<p>{2}使用PPGs作为输入代替字符</p>
-</blockquote>
-<p>​ {3}原始的Tacotron 2 接收一个字符序列作为输入，显然这要比我们的PPG序列短。例如每一个我们语料库的句子平均包含41个字符，然而PPG序列却有几百帧。因此，原始的Tacotron 2注意机制会被如此长的输入序列所混淆，并导致PPG和声音序列之间的不一致，例如 [15]。结果，推论将是病态的，并且将产生不可理解的语音。{3-1}一种解决该问题的方法是使用更短的PPG序列训练PPG2Mel模型。例如，一种是可以用词组代替句子。然而，这种解决方法有一些问题。首先，为了获得正确的词语边界，我们需要强制对其训练的句子，这需要获取转码。第二，更重要的是，使用短片段训练进行长输入序列的预测会导致模型失败，例如[33]。</p>
-<p>​ <u>{3-2}我们通过在注意机制中添加一个局部约束来解决这个问题</u>。语音信号具有很强的时间连续性和渐进性。为来抓取语音上下文，我们只需要在局部的小窗口中观察PPGs。受此启发，在训练过程中的每一个解码步骤中，我们都将注意力机制限制为查看隐藏状态序列中的窗口，而不是查看完整序列。我们正式定义这个约束如下。定义<span class="math inline">\(d_i\)</span>为decoder LSTM的第<span class="math inline">\(i\)</span>步输出，<span class="math inline">\(y_i\)</span>为预测出的声学特征(是对<span class="math inline">\(d_i\)</span>应用线性投影后的output)，<span class="math inline">\(h = [h_1,...,h_T]\)</span>是来自encoder的hidden states的整个序列。应用局部敏感的注意机制，我们得到， <img src="/images/f1.png" /></p>
-<p>这里的<span class="math inline">\(s_{i-1}\)</span>是attention LSTM第(i-1)步的hidden state，<span class="math inline">\(g_i\)</span>是attention context,</p>
-<p><img src="/images/f2.png" /></p>
-<p><img src="/images/f3.png" /></p>
-<p>都是attention weights。attention scores <span class="math inline">\(e_{ij}\)</span>计算方法如下</p>
-<p><img src="/images/f4.png" /></p>
-<p>这里 <span class="math inline">\(v, W, V, U, b\)</span> 都是attention module的可学习参数（learnable parameters）。<span class="math inline">\(F\)</span> 包含<span class="math inline">\(k\)</span>个一维(1-D)可学习的带有<span class="math inline">\(r\)</span>-dims的内核，<span class="math inline">\(f_i^j ∈ R^k\)</span> 是在<span class="math inline">\(j\)</span> 位置上将 <span class="math inline">\(F\)</span> 与 <span class="math inline">\(a_{i-1}\)</span> 卷积的结果。</p>
-<p>现在，为了<u>实施局部性约束</u>，我们只考虑以当前帧为中心的固定窗口中的隐藏表示，例如：</p>
-<p><img src="/images/f5.png" /></p>
-<p>这里的<span class="math inline">\(w\)</span> 是窗口大小，接着</p>
-<p><img src="/images/f6.png" /></p>
-<p>PPG2Mel模型的损失函数如下：</p>
-<p><img src="/images/f7.png" /></p>
-<p>这里<span class="math inline">\(G_{mel}\)</span> 是真实值的mel-spectrogram；<span class="math inline">\(P_{Decoder}\)</span> 和<span class="math inline">\(P_{PostNet}\)</span> 是分别来自decoder（after linear projection) 和PostNet。<span class="math inline">\(G_{stop}\)</span> 是真实的stop token，<span class="math inline">\(P_{stop}\)</span> 是预测的stop token；<span class="math inline">\(CE(∙)\)</span> 是交叉熵损失；<span class="math inline">\(\alpha, \beta, \gamma\)</span> 控制每个损失项的相对重要性。</p>
-<blockquote>
-<p>{3}由于序列过长导致注意力机制出错</p>
-<p>{3-2}解决方法：将注意力机制限制为查看隐藏状态序列中的窗口，而不是查看完整序列</p>
-<p>{3-2}详述了attention方法的基本原理!!!</p>
-</blockquote>
-<h4 id="mel2speech">3.3 Mel2speech</h4>
-<p>我们使用WaveGlow声码器将语音合成器的输出转换回语音波形。WaveGlow是一个flow-based的[35]网络，能够从mel频谱图生成高质量的语音（与Wave Net相当）。它从零均值球面高斯（方差<span class="math inline">\(\sigma\)</span>）中抽取与期望输出具有相同维数的样本，并将这些样本通过一系列层，这些层将简单分布转换为具有期望分布的分布。训练一个声码器的情况下，我们使用WaveGlow对mel谱图上的音频样本分布进行建模。WaveGlow只需一个神经网络就可以实现实时的推理，而WaveNet由于其自回归特性，需要很长的时间来合成一个话语。有关WaveGlow声码器的更多详细信息，请参阅[14]。</p>
-<h3 id="实验和结果">4. 实验和结果</h3>
-<h4 id="实验步骤">4.1 实验步骤</h4>
-<p>我们使用<u><em>Librispeech corpus</em></u>[30]来训练AM。该语料库包含960hrs的英文母语语音， 大多数是来自北美的。AM有五个隐藏层和一个有5816个senones的输出层。我们在两个来自<u><em>L2-ARCTIC</em></u>的非母语者语料上<sup>{1}</sup>训练PPG2Mel和WaveGlow模型。我们使用Audacity[36]对原始的L2-ARCTIC记录进行降噪处理，目的是去除环境背景的噪声。对于母语参考语音，我们使用了来自<u><em>ARCTIC</em></u>语料库[37]的两名北美说话者BDL（M）和CLB（F）[37]。 L2-ARCTIC和ARCTIC的每个发言者都收录了相同的一组1132个句子，或大约一个小时的演讲时间。对于每一个L2-ARCTIC的说话人，我们使用前1032个句子进行模型训练，接下来的50个句子用于验证，剩下的50个句子用于测试。所有音频信号均在16 KHz下采样。我们使用了80个滤波器组，以10ms的位移和64ms的窗口来提取mel谱图。也以10ms的位移提取PPG。</p>
-<blockquote>
-<p>{注-1} 本段说明了语料信息，和样本处理方法</p>
-<p>{1}关于非母语者语料的描述：YKWK (na-tive male Korean speaker) and ZHAA (native female Arabic speaker) from the publicly-available L2-ARCTIC corpus [34].</p>
-</blockquote>
-<p>在<strong>Table 1.</strong>中总结了<u>PPG2Mel模型</u>的参数。我们使用6的批量大小(batch size)和1×10 -4的学习率(learning rate)。 <span class="math inline">\(\alpha,\beta,\gamma\)</span> 分别根据经验设置为1.0、1.0和0.005。 注意机制的局部性约束的窗口大小 <span class="math inline">\(\omega\)</span> 设置为20。我们训练模型，直到验证损失达到平稳（〜8h）。</p>
-<p>对于<u>WaveGlow模型</u>，我们根据[14]的建议在训练过程中将 <span class="math inline">\(\sigma\)</span> 设置为0.701，在测试过程中将 <span class="math inline">\(\sigma\)</span> 设置为0.6。 批次大小为3，学习率为1×10 -4。 训练模型直到收敛（约一天）。 所有模型都在单个Nvidia GTX 1070 GPU上进行了训练。</p>
-<p><img src="/images/FACt1.png" style="zoom: 67%;" /></p>
-<p>使用Kaldi训练AM，及其他模型用PyTorch上实现，使用Adam optimizer训练。更多细节和音频样本，请参考https://github.com/guanlongzhao/fac-via-ppg。</p>
-<blockquote>
-<p>{注-2}本段说明了部分模型参数</p>
-</blockquote>
-<p>我们将提出的系统与如下构建的baseline[9]进行比较。首先，我们计算每个native和non-native frames 的PPG。然后，我们在PPG空间中只用symmetric KL divergence对最接近的native帧和non-native帧进行配对。在最后一步中，我们从帧对中提取Mel倒谱系数（MCEPs）来训练joint-density GMM（JD-GMM）spectral conversion ，如[39]所述。然后，我们使用JD-GMM转换了native MCEPs，以匹配非母语者的voice quality。最后，我们使用STRAIGHT Vocoder[40]从转换后的MCEPs结合母语者的非周期性（aperiodicity，AP）和F0（归一化为非母语者的音调范围(pitch range）来合成语音。我们在基线系统中使用了同样的1032个发音训练集。GMM包含128个混合矩阵和全协方差矩阵。我们使用24维MCEPs（不包括MCEP0）和Δ特征。所有特征均以10ms位移和25ms窗口直线提取。对于每个系统都使用说话者BDL-YKWK和CLB-ZHAA语料做重音转换。</p>
-<blockquote>
-<p>{注-3}baseline system的构建方法。</p>
-</blockquote>
-<h4 id="结果">4.2 结果</h4>
-<blockquote>
-<p>[半机翻]</p>
-</blockquote>
-<p>我们进行三种听力测试来比较系统的表现： 音频质量和自然度的Mean Opinion Score (MOS) 测试，声音相似度测试，口音测试。所有测试都在Amazon Mechanical Turk上进行，所有的参与者都是美国居民。每一个测试，来自不同系统的每个说话者的25个语句对（总共50个）被随机选择。样本的出现顺序在所有实验中都是随机的。</p>
-<p>音频质量和自然度的MOS测试的分数是五分制的（1-bad, 2-poor, 3-fair, 4-good, 5-excellent）。音频质量和自然度的MOS分别描述了语音的清晰度和与人类的相似度。这两个测量是从不重叠的听众群体中获得的，以避免偏见。每个音频样本至少收到17个分数。听众还将对同一组北极和L2北极原始录音进行评分以作为参考。结果汇总在<strong>Table 2.</strong>和<strong>Table 3.</strong>中。值得注意的是，在[9]中，我们确定了基线系统的音频质量MOS比使用DTW进行帧配对的传统JD-GMM系统大约高0.4。因此，我们的基线比传统的JD-GMM更强。</p>
-<p><img src="/images/df.png" style="zoom:67%;" /></p>
-<p>在所有情况下，我们的系统在音质和自然度方面都明显优于基线。尽管这两个系统的音频质量MOS都要低于原始记录(语料库的原始音频)，但在自然度MOS上，无论是ARCTIC（<span class="math inline">\(p\)</span>=0.35）还是L2-ARCTIC（<span class="math inline">\(p\)</span>=0.54），使用双尾双样本t检验，提出的系统都没有显著差异。</p>
-<p>在语音相似性测试中，给听者提供了三个话语，即原始的非母语话语和来自两个系统的合成语，并要求他们选择哪一个合成语听起来更像非母语者。参与者还被要求在做出选择时，用7分制（1分表示完全不自信，7分表示极度自信）来评定他们的置信水平。参与者被要求在执行任务时忽略口音。在每次试验中，来自两个系统的样本的呈现顺序是平衡的，17名参与者对音频样本进行评级。结果见<strong>Table 4.</strong>。在72.47%的案例中，听者以3.4的置信水平（高于“somewhat confident”）选择提议的系统，而在其余27.53%的案例中，听者以低很多的置信评分（1.05，或“完全不置信”）选择基线系统。</p>
-<p><img src="/images/sf6.png" /></p>
-<p>在口音测试中，参与者被要求用九分制（1分为非外国口音，9分为非常强的外国口音）对外国口音的程度进行评分，这是发音文献中常用的方法[43]。每个音频样本由18个人评分。结果汇总在表5中。ARCTIC 说话者的原始话语被评为“没有外国口音”（1.20），而L2-ARCTIC 说话者的原始话语被评为重口音（7.17）。基线系统（2.94）和提议的系统（3.93）与第二语言北极语相比显著降低了外国口音，但被评为比本国口音更重。令人惊讶的是，我们的系统生成的语音被评为比基线系统更重的口音；有关此结果的潜在解释，请参见讨论部分。</p>
-<p><img src="/images/fa6.png" /></p>
-<h3 id="讨论与结论">5. 讨论与结论</h3>
-<p>提出的AC系统处理的语音要好于基线系统，这得益于它使用了最先进的Seq2Seq模型(a modified Tacotron2)将PPGs转换为Mel-spectrograms，同时使用了一个神经声码器(neural vocoder)直接从mel谱图生成音频信号。该方法利用了语音信号的时变特性，避免了传统的基于信号处理的会降低了合成质量的声码器的使用。我们还提出了一种易于实现的注意机制的局部约束，使PPG-to-Mel模型在话语层面(utterance-level)样本上可训练。请注意，我们的MOS数值低于原始Tacotron 2和WaveGlow纸张中的MOS数值，这主要是因为它们的系统接受了24倍以上的数据训练。<u>提高系统MOS数值的一个未来方向是联合训练PPG-to-Mel和WaveGlow模型。</u>{1}</p>
-<blockquote>
-<p>{1}如何提高MOS值</p>
-</blockquote>
-<p>与从母语者那里借用激励信息（F0，AP）的基线形成对比，我们的系统直接从合成后的mel谱图中生成了非原生说话者的激励。 这样可以防止母语使用者的语音质量渗入到合成中，使合成语音与非母语使用者的音质更加相似。</p>
-<p>我们的系统从本地PPG序列中提取母语的发音模式，因此使合成语音的口音明显低于非母语的语音。与基线系统相比，口音(accentedness)评分的轻微增加可能是两个因素的结果。{2}首先，AM(acoustic model)在提取PPG时不可避免地会产生识别错误，这些错误将在合成中反映为发音错误。其次，该模型没有明确地模拟重音和语调模式，因此，我们发现一些合成结果有意想不到的语调。因此，在未来的工作中，我们计划将信息整合到建模过程中；{2-1}<u>一种可能的解决方法是在训练和测试PPG-to-Mel模型时，将PPG序列置于一个标准化的F0循环(contour)中。</u></p>
-<blockquote>
-<p>{2}为什么出现口音评分反而轻微增加的情况</p>
-<p>{2}原因：模型存在AM系统识别不稳定，及没有明确对母语发音建模的问题</p>
-<p>{2-1}上述问题可能的解决方法</p>
-</blockquote>
-<p>目前，{3}PPG-to-Mel和WaveGlow模型需要非母语者至少一小时的语音。<u>可以使用多说话人TTS的迁移学习范式来减轻这一需求。</u>{4}AC的最终目标是在合成时消除对参考音的需要，即获取非母语者的语音并自动减少其口音。<u>这可以通过学习一个从非母语者的PPG序列到母语者的PPG序列的Seq2Seq的映射来实现，然后使用这个口音减少的PPG序列驱动PPG2Mel合成器。</u></p>
-<blockquote>
-<p>{3}如何简单训练数据负担 {3-1}通过一些迁移学习范式</p>
-<p>{4}如何在合成时消除对参考音的需要 {4-1}直接学习一种Seq2Seq的映射</p>
-</blockquote>
-<h3 id="section"></h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/17/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/16/command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Fuu">
+      <meta itemprop="description" content="Don't be afraid !">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="僞造菌群">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/16/command/" class="post-title-link" itemprop="url">Manjaro command line</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-16 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-16T00:00:00+09:00">2020-01-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-19 10:16:10" itemprop="dateModified" datetime="2020-01-19T10:16:10+09:00">2020-01-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="command-line">Command Line</h2>
+<ul>
+<li>列出目录下的所有文件夹的及文件，规整
+<ul>
+<li>ls -laR /etc/X11/</li>
+</ul></li>
+<li>查看安装的驱动
+<ul>
+<li>inxi -G</li>
+</ul></li>
+<li>查看各文件大小
+<ul>
+<li>du [-abcDhHklmsSx] [-L <符号连接>][-X <文件>][--block-size][--exclude=<目录或文件>] [--max-depth=<目录层数>][--help][--version][目录或文件]</li>
+<li>eg. sudo du -h --max-depth=1</li>
+</ul></li>
+<li>smb://ganglion/disk1</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/16/command/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -404,12 +393,12 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="WZJQ">
-      <meta itemprop="description" content="Brave!">
+      <meta itemprop="name" content="Fuu">
+      <meta itemprop="description" content="Don't be afraid !">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="僞造菌群のBlog">
+      <meta itemprop="name" content="僞造菌群">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -455,212 +444,6 @@
 <h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://seiifuu.github.io/2020/01/15/command/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="WZJQ">
-      <meta itemprop="description" content="Brave!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="僞造菌群のBlog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/15/command/" class="post-title-link" itemprop="url">Manjaro command line</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-01-15 00:00:00 / Modified: 18:08:26" itemprop="dateCreated datePublished" datetime="2020-01-15T00:00:00+09:00">2020-01-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="command-line">Command Line</h2>
-<ul>
-<li>列出目录下的所有文件夹的及文件，规整
-<ul>
-<li>ls -laR /etc/X11/</li>
-</ul></li>
-<li>查看安装的驱动
-<ul>
-<li>inxi -G</li>
-</ul></li>
-<li>查看各文件大小
-<ul>
-<li>du [-abcDhHklmsSx] [-L <符号连接>][-X <文件>][--block-size][--exclude=<目录或文件>] [--max-depth=<目录层数>][--help][--version][目录或文件]</li>
-<li>eg. sudo du -h --max-depth=1</li>
-</ul></li>
-<li>smb://ganglion/disk1</li>
-</ul>
-<h2 id="docker">Docker</h2>
-<p><a href="https://wiki.archlinux.org/index.php/Docker_(简体中文)" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Docker_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
-<p>https://zhuanlan.zhihu.com/p/65696014</p>
-<p>https://blog.csdn.net/github_36749622/article/details/83094601</p>
-<h2 id="colab">Colab</h2>
-<p>https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d</p>
-<p>https://juejin.im/post/5c05e1bc518825689f1b4948</p>
-<ul>
-<li><p>设置GPU</p></li>
-<li><p>授权和切换工作路径</p></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">!apt-get install -y -qq software-properties-common python-software-properties module-init-tools</span><br><span class="line">!add-apt-repository -y ppa:alessandro-strada/ppa 2&gt;&amp;1 &gt; /dev/null</span><br><span class="line">!apt-get update -qq 2&gt;&amp;1 &gt; /dev/null</span><br><span class="line">!apt-get -y install -qq google-drive-ocamlfuse fuse</span><br><span class="line">from google.colab import auth</span><br><span class="line">auth.authenticate_user()</span><br><span class="line">from oauth2client.client import GoogleCredentials</span><br><span class="line">creds = GoogleCredentials.get_application_default()</span><br><span class="line">import getpass</span><br><span class="line">!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null 2&gt;&amp;1 | grep URL</span><br><span class="line">vcode = getpass.getpass()</span><br><span class="line">!<span class="built_in">echo</span> &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;</span><br><span class="line"></span><br><span class="line">!mkdir -p drive</span><br><span class="line">!google-drive-ocamlfuse drive</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">path &#x3D; &quot;&#x2F;content&#x2F;drive&#x2F;OpenNMT&#x2F;...(dirs...)&quot;</span><br><span class="line">os.chdir(path)</span><br><span class="line">os.listdir(path)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>安装anaconda环境，配置conda env <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;facebookresearch.github.io&#x2F;TensorComprehensions&#x2F;installation_colab_research.html</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="vim">Vim</h2>
-<p><a href="https://realpython.com/vim-and-python-a-match-made-in-heaven/#verifying-your-vim-install" target="_blank" rel="noopener">vim for python</a></p>
-<h4 id="sp-vs-分屏">. sp / vs 分屏</h4>
-<ul>
-<li><p>sp / vs 后 <tab> 检索打开的文件</p></li>
-<li><p>垂直方向分屏： sp <filename></p></li>
-<li><p>水平方向分屏：vs <filename></p></li>
-</ul>
-<h4 id="ls-b-阅览与打开历史打开文件">. ls / b 阅览与打开历史打开文件</h4>
-<ul>
-<li><p>打开最近打开列表:：ls</p></li>
-<li><p>打开对应编号的文件：b <buffer nubmer></p></li>
-</ul>
-<h4 id="空格折叠">. 空格折叠</h4>
-<ul>
-<li>.vimrc: nnoremap <space> za</li>
-<li>Plugin 'tmhedberg/SimpylFold'（未安装成功）</li>
-</ul>
-<h2 id="git">Git</h2>
-<p>http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</p>
-<figure>
-<img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015120901.png" alt="img" /><figcaption>img</figcaption>
-</figure>
-<h4 id="新建代码库">新建代码库</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在当前目录新建一个Git代码库</span></span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载一个项目和它的整个代码历史</span></span><br><span class="line">$ git <span class="built_in">clone</span> [url]</span><br></pre></td></tr></table></figure>
-<h4 id="配置">配置</h4>
-<p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前的Git配置</span></span><br><span class="line">$ git config --list</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 编辑Git配置文件</span></span><br><span class="line">$ git config -e [--global]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 设置提交代码时的用户信息</span></span><br><span class="line">$ git config [--global] user.name <span class="string">"[name]"</span></span><br><span class="line">$ git config [--global] user.email <span class="string">"[email address]"</span></span><br></pre></td></tr></table></figure>
-<h4 id="增加删除文件">增加/删除文件</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加每个变化前，都会要求确认</span></span><br><span class="line"><span class="comment"># 对于同一个文件的多处变化，可以实现分次提交</span></span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
-<h4 id="代码提交">代码提交</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次commit之后的变化，直接到仓库区</span></span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交时显示所有diff信息</span></span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次commit，并包括指定文件的新变化</span></span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
-<h4 id="分支">分支</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有远程分支</span></span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有本地分支和远程分支</span></span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，但依然停留在当前分支</span></span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，并切换到该分支</span></span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向指定commit</span></span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，与指定的远程分支建立追踪关系</span></span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到上一个分支</span></span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span></span><br><span class="line">$ git branch --<span class="built_in">set</span>-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 选择一个commit，合并进当前分支</span></span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
-<h4 id="标签">标签</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有tag</span></span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在当前commit</span></span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个tag在指定commit</span></span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除本地tag</span></span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程tag</span></span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看tag信息</span></span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交指定tag</span></span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交所有tag</span></span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个分支，指向某个tag</span></span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
-<h4 id="查看信息">查看信息</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示有变更的文件</span></span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的版本历史</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示commit历史，以及每次commit发生变更的文件</span></span><br><span class="line">$ git <span class="built_in">log</span> --<span class="built_in">stat</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索提交历史，根据关键词</span></span><br><span class="line">$ git <span class="built_in">log</span> -S [keyword]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，每个commit占据一行</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件</span></span><br><span class="line">$ git <span class="built_in">log</span> [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个文件的版本历史，包括文件改名</span></span><br><span class="line">$ git <span class="built_in">log</span> --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件相关的每一次diff</span></span><br><span class="line">$ git <span class="built_in">log</span> -p [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示过去5次提交</span></span><br><span class="line">$ git <span class="built_in">log</span> -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有提交过的用户，按提交次数排序</span></span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件是什么人在什么时间修改过</span></span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和工作区的差异</span></span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示暂存区和上一个commit的差异</span></span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示工作区与当前分支最新commit之间的差异</span></span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示两次提交之间的差异</span></span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示今天你写了多少行代码</span></span><br><span class="line">$ git diff --shortstat <span class="string">"@&#123;0 day ago&#125;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交的元数据和内容变化</span></span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交发生变化的文件</span></span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某次提交时，某个文件的内容</span></span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示当前分支的最近几次提交</span></span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
-<h4 id="远程同步">远程同步</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载远程仓库的所有变动</span></span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送所有分支到远程仓库</span></span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
-<h4 id="撤销">撤销</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 恢复暂存区的指定文件到工作区</span></span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复某个commit的指定文件到暂存区和工作区</span></span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复暂存区的所有文件到工作区</span></span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区与工作区，与上一次commit保持一致</span></span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个commit，用来撤销指定commit</span></span><br><span class="line"><span class="comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂时将未提交的变化移除，稍后再移入</span></span><br><span class="line">$ git stash</span><br><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
-<h4 id="其他">其他</h4>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成一个可供发布的压缩包</span></span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
-<h2 id="pacman">pacman</h2>
-<p><code>sudo pacman-mirrors --fasttrack &amp;&amp; sudo pacman -Syyu</code></p>
-<p><code>pacman -S package_name        # 安装软件   pacman -S extra/package_name  # 安装不同仓库中的版本 pacman -Syu                   # 升级整个系统，y是更新数据库，yy是强制更新，u是升级软件 pacman -Ss string             # 在包数据库中查询软件 pacman -Si package_name       # 显示软件的详细信息 pacman -Sc                    # 清除软件缓存，即/var/cache/pacman/pkg目录下的文件 pacman -R package_name        # 删除单个软件 pacman -Rs package_name       # 删除指定软件及其没有被其他已安装软件使用的依赖关系 pacman -Qs string             # 查询已安装的软件包 pacman -Qi package_name       # 查询本地安装包的详细信息 pacman -Ql package_name       # 获取已安装软件所包含的文件的列表 pacman -U package.tar.zx      # 从本地文件安装 pactree package_name          # 显示软件的依赖树</code></p>
-<p>列出已经安装的软件包👇</p>
-<p>pacman -Q 查看virtualbox包是否已经安装👇</p>
-<p>pacman -Q virtualbox 查看已安装的包virtualbox的详细信息👇</p>
-<p>pacman -Qi virtualbox 列出已安装包virtualbox的所有文件👇</p>
-<p>pacman -Ql virtualbox 查找某个文件属于哪个包👇</p>
-<p>pacman -Qo /etc/passwd 查询包组👇</p>
-<p>pacman -Sg 查询包组所包含的软件包👇</p>
-<p>pacman -Sg gnome 搜索virtualbox相关的包👇</p>
-<p>pacman -Ss virtualbox 从数据库中搜索virtualbox的信息👇</p>
-<p><strong>pacman -Si virtualbox</strong> <strong>仅同步源👇</strong></p>
-<p><strong>sudo pacman -Sy</strong> <strong>更新系统👇</strong></p>
-<p><strong>sudo pacman -Su</strong> <strong>同步源并更新系统👇</strong></p>
-<p><strong>sudo pacman -Syu</strong> <strong>同步源后安装包👇</strong></p>
-<p>sudo pacman -Sy virtualbox 从本地数据库中获取virtualbox的信息，并下载安装👇</p>
-<p>sudo pacman -S virtualbox 强制安装virtualbox包👇</p>
-<p>sudo pacman -Sf virtualbox 删除virtualbox👇</p>
-<p>sudo pacman -R virtualbox 强制删除被依赖的包（慎用）👇</p>
-<p>sudo pacman -Rd virtualbox 删除virtualbox包及依赖其的包👇</p>
-<p>sudo pacman -Rc virtualbox 删除virtualbox包及其依赖的包👇</p>
-<p>sudo pacman -Rsc virtualbox 清理/var/cache/pacman/pkg目录下的旧包👇</p>
-<p>sudo pacman -Sc 清除所有下载的包和数据库👇</p>
-<p>sudo pacman -Scc 安装下载的virtualbox包（有时候需要降级包的时候就用这个）👇</p>
-<p>cd /var/cache/pacman/pkg</p>
-<p>sudo pacman -U virtualbox-5.2.12-1-x86_64.pkg.tar.xz 升级时不升级virtualbox包👇</p>
-<p>sudo pacman -Su --ignore virtualbox 详细请转向：https://wiki.archlinux.org/index.php/Pacman_(简体中文)</p>
-<h2 id="conda">conda</h2>
-<p>0.获取版本号 conda --version</p>
-<p>或</p>
-<p>​ conda -V</p>
-<p>1.获取帮助 conda --help conda -h 查看某一命令的帮助，如update命令及remove命令 conda update --help conda remove --help 同理，以上命令中的--help也可以换成-h。</p>
-<p>2.环境管理 查看环境管理的全部命令帮助 conda env -h</p>
-<p>创建环境 conda create --name your_env_name 输入y确认创建。</p>
-<p>创建制定python版本的环境 conda create --name your_env_name python=2.7 conda create --name your_env_name python=3 conda create --name your_env_name python=3.5</p>
-<p>创建包含某些包的环境 conda create --name your_env_name numpy scipy</p>
-<p>创建指定python版本下包含某些包的环境 conda create --name your_env_name python=3.5 numpy scipy</p>
-<p>列举当前所有环境 conda info --envs conda env list</p>
-<p>进入某个环境 activate your_env_name</p>
-<p>退出当前环境 deactivate</p>
-<p>复制某个环境 conda create --name new_env_name --clone old_env_name</p>
-<p>删除某个环境 conda remove --name your_env_name --all</p>
-<p>4.包管理 列举当前活跃环境下的所有包 conda list</p>
-<p>列举一个非当前活跃环境下的所有包 conda list -n your_env_name</p>
-<p>为指定环境安装某个包 conda install -n env_name package_name</p>
-<p>如果不能通过conda install来安装，文档中提到可以从Anaconda.org安装，但我觉得会更习惯用pip直接安装。pip在Anaconda中已安装好，不需要单独为每个环境安装pip。如需要用pip管理包，activate环境后直接使用即可。</p>
-<p>5.清理包</p>
-<p>​ conda clean --all</p>
-<h2 id="reboot">Reboot</h2>
-<p>.i3/config</p>
-<p>~/.zshrc</p>
-<p>~/command.md</p>
-<p><del>/etc/fstab</del></p>
-<p>~/.vimrc</p>
-<p>ganglion 挂载</p>
-<p>smb://ganglion/disk1</p>
-<h2 id="for-nvidia-gpu">For Nvidia-GPU</h2>
-<p>https://blog.csdn.net/qq_39828850/article/details/87919188</p>
-<h2 id="section"></h2>
 
       
     </div>
@@ -735,10 +518,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="WZJQ"
+    <img class="site-author-image" itemprop="image" alt="Fuu"
       src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">WZJQ</p>
-  <div class="site-description" itemprop="description">Brave!</div>
+  <p class="site-author-name" itemprop="name">Fuu</p>
+  <div class="site-description" itemprop="description">Don't be afraid !</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -802,7 +585,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">WZJQ</span>
+  <span class="author" itemprop="copyrightHolder">Fuu</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
@@ -927,6 +710,56 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
