@@ -1,6 +1,6 @@
 ---
 title: Manjaro command line
-date: 2020-01-15
+date: 2020-01-16
 tags:
 - Linux
 categories:
@@ -17,6 +17,7 @@ categories:
     - eg.    sudo du -h --max-depth=1
 - smb://ganglion/disk1
 
+<!-- more -->
 ## Docker
 
 [https://wiki.archlinux.org/index.php/Docker_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)](https://wiki.archlinux.org/index.php/Docker_(简体中文))

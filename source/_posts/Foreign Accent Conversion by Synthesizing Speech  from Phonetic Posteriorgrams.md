@@ -1,6 +1,6 @@
 ---
 title:  Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019 
-date: 2020-01-16
+date: 2020-01-17
 tags:
 - accent conversion
 - PPGs
@@ -17,6 +17,7 @@ mathjax: true
 >
 > https://www.semanticscholar.org/paper/Foreign-Accent-Conversion-by-Synthesizing-Speech-Zhao-Ding/8386d03827eabc8446883cd16e46ef10d3d318d4
 
+<!-- more -->
 ### 0. 摘要
 
 外国人口音转换(FAC)目标是生成一个语音听起来与被给的非母语者相似，但是拥有母语者的口音。过去的FAC方法在合成时借用了来自参考语句(母语)的激励信息（F0  and  aperiodicity;  pro-duced  by  a  conventional  vocoder）。使用这样的方法，合成的声音保留了母语者声音质量的一些方面。我们展示了一种方法，摒弃了过去使用的Vocoder与母语者的激励(excitation)。我们的方法使用一个在母语者语料上训练的声学模型用于抽取独立于说话者(Speaker-independent)的PPGs，而后训练一个语音合成器将来自非母语者的PPGs映射到对应的谱特征上，该谱特征可以通过一个高质量的神经Vocoder依次转换为声音波形。运行时，我们使用从母语者语句中抽取的PPGs作为参照驱动合成器^{1}^。听力测试表明，与基线系统相比，该系统产生的语音更清晰、更自然、更接近非母语者，同时显著降低了非母语者的感知外国口音。
