@@ -1,10 +1,27 @@
 # A breif note of blog
 
 ## Steps of uploading and deploy
-1. **(Client PC or Github)** Write the article and link the pictures
-2. **(Github)**              Modify the path of pic (/images/pic_name), edit _post head
-3. **(Github)**              Commit the .md and pic to Github ->hexo /source/_posts and /source/images
-4. **(Server PC)**           exe. pull_.sh and hexo s for preview or exe. deploy.sh for deploy blog.
+1. **(Client PC or Github)** 
+  write the article and link the pictures
+  
+2. **(Github)**             
+  modify the path of pic (/images/pic_name), 
+  edit _post head, ```<!-- more-->```
+  
+3. **(Github)**              
+  Commit the .md 
+  
+4. **(Server PC)**           
+  sh pull_.sh 
+  mkdir pic_folder_name && touch test
+  sh _push.sh
+
+5. **(Github)**   
+  upload pic to Github
+  
+6. **(Server PC)**
+  hexo s for preview /
+  sh deploy.sh for deploy blog.
 
 Note: you can't push a emtpy folder
 
