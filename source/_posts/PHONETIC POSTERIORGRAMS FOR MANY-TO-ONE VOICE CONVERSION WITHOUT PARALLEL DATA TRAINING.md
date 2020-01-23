@@ -1,3 +1,15 @@
+----
+title: PHONETIC POSTERIORGRAMS FOR MANY-TO-ONE VOICE CONVERSION WITHOUT PARALLEL DATA TRAINING 译
+
+date: 2020/01/23
+tags:
+  - voice conversion
+  - PPGs
+categories: 
+  - voice conversion
+mathjax: true
+----
+
 ## PHONETIC POSTERIORGRAMS FOR MANY-TO-ONE VOICE CONVERSION WITHOUT PARALLEL DATA TRAINING
 
 >基于音素后验图不使用平行数据训练的多到一的声音转换
@@ -12,15 +24,15 @@
 
 **PPGs**
 
-<img src="../../arch/images/0121_PPGforM2O/f4_ppgs.png" style="zoom:67%;" />
+<img src="/images/0121_PPGforM2O/f4_ppgs.png" style="zoom:67%;" />
 
 **Baseline**
 
-<img src="../../arch/images/0121_PPGforM2O/f2_DBLSTM_parallel_data.png" style="zoom: 80%;" />
+<img src="/images/0121_PPGforM2O/f2_DBLSTM_parallel_data.png" style="zoom: 80%;" />
 
 **Proposal**
 
-<img src="../../arch/images/0121_PPGforM2O/f3_vc_PPGs.png" style="zoom:80%;" />
+<img src="/images/0121_PPGforM2O/f3_vc_PPGs.png" style="zoom:80%;" />
 
 ### 1. 概述
 
@@ -48,7 +60,7 @@
 
 #### 2.1 DBLSTM的基本框架
 
-<img src="../../arch/images/0121_PPGforM2O/f1_architecture_DBLSTM.png" style="zoom:80%;" />
+<img src="/images/0121_PPGforM2O/f1_architecture_DBLSTM.png" style="zoom:80%;" />
 
 ​		如Fig.1. 所示，DBLSTM是一个序列到序列的映射模型。中间的部分和左右两边的部分(被分别记为t, t-1, t+1) 分别表示当前帧，前一帧和后一帧。图1中每一个正方形代表一个记忆块，包含自连接（self-connection）的存储单元（memory cell）和三个门单元（即输入、输出和忘记门forget gates），它们分别提供写入、读取和复位操作。此外，每一层的双向连接可以在前向和后向两个方向上充分利用上下文信息。
 
@@ -58,7 +70,7 @@
 
 ​		基线方法被划分为训练阶段和转换阶段，如Fig. 2. 描述。
 
-![](../../arch/images/0121_PPGforM2O/f2_DBLSTM_parallel_data.png)
+![](/images/0121_PPGforM2O/f2_DBLSTM_parallel_data.png)
 
 ​		在**训练阶段**，使用STAIGHT[14]抽取谱包络（spectral envelope）。抽取Mel-cepstral coefficients（MCEPs）特征用来表示谱包络，之后将来自源语音和目标语音的MCEPs用动态时间规整（DTW）对齐。然后，将源语音和目标语音的MCEPs配对作为训练数据。通过时间反向传播（BPTT）来训练DBLSTM模型。
 
@@ -76,7 +88,7 @@
 
 ​		为了解决基线方法的一些限制，我们提出了一种基于PPGs的方法，来自SI-ASR系统的PPGs是可以连接不同说话者的(can bridge across speakers)。
 
-<img src="../../arch/images/0121_PPGforM2O/f3_vc_PPGs.png"  />
+<img src="/images/0121_PPGforM2O/f3_vc_PPGs.png"  />
 
 #### 3.1  概观
 
@@ -86,7 +98,7 @@
 
 > Phonetic PosteriorGrams
 
-​		PPG是一个时间与类别的矩阵，表示每一个语音类别(phonetic class)在一个语句的每一个特定时间帧对应的后验概率[11] [12] 。每一个语言类别可能指一个单词，音素或者senone。在这篇论文里，我们使用senone作为语音类别。Fig.4. 展示了"particular case" 语段的PPGs表示。<img src="../../arch/images/0121_PPGforM2O/f4_ppgs.png" style="zoom:67%;" />
+​		PPG是一个时间与类别的矩阵，表示每一个语音类别(phonetic class)在一个语句的每一个特定时间帧对应的后验概率[11] [12] 。每一个语言类别可能指一个单词，音素或者senone。在这篇论文里，我们使用senone作为语音类别。Fig.4. 展示了"particular case" 语段的PPGs表示。<img src="/images/0121_PPGforM2O/f4_ppgs.png" style="zoom:67%;" />
 
 ​		我们认为由SI-ASR获得的PPGs可以表示语音的清晰发音在正规化的说话者空间中，并且是独立于说话者对应于语音内容的。
 
@@ -94,7 +106,7 @@
 
 ​		在**训练阶段1**中，使用多说话者的ASR语料对SI-ASR系统进行了PPG生成的训练。 通过一个语句的例子来说明这些方程。输入是$t^{th}$ frame 的MFCC feature vector，记作$X_t$ 。输出是后验概率的vector $P_t = (p(s|X_t)|s = 1,2,...,C)$, 其中$p(s|X_t)$ 是指每一个语音类别$s$ 的后验概率。
 
-<img src="../../arch/images/0121_PPGforM2O/f5_train_DBLSTM.png" style="zoom:67%;" />
+<img src="/images/0121_PPGforM2O/f5_train_DBLSTM.png" style="zoom:67%;" />
 
 ​		如Fig5.所示，**训练阶段2**训练DBLSTM模型（语音参数生成模型）映射PPG与MCEPs序列之间的关系。对于已知的<u>目标说话者语句</u>，$t$ 是这个序列的帧索引（frame index）。输入是由已训练好的SI-ASR模型计算得到的PPG$(P_1, ..., P_t, ..., P_N)$。理想的输出层数值(the ideal value of output layer)是从<u>目标语音</u>抽取的MCEPs序列$(Y_1^T, ..., Y_t^T, ..., Y_N^T)$ 。实际的输出值(actual value)是$(Y_1^R, ..., Y_t^R, ..., Y_N^R)$ 。训练阶段2的损失函数是：
 $$
@@ -152,7 +164,7 @@ $$
 
 ​		为了探索training data size 的影响，所有系统都使用不同数量的训练数据进行了训练 —— 5、20、60、100和200个句子。 对于基线方法，训练数据由来自源说话者和目标说话者的平行句子对组成。 对于建议的方法，训练数据仅包含target speaker的句子。 测试数据集包含来自source speaker的80个句子。
 
-<img src="../../arch/images/0121_PPGforM2O/f6_f7_MCD.png" style="zoom:67%;" />
+<img src="/images/0121_PPGforM2O/f6_f7_MCD.png" style="zoom:67%;" />
 
 ​		图6和图7分别示出了male-to-male和male-female的实验结果。 如图所示，当训练大小为5、20和60个句子时，MCD值随着数据大小的增加而变小。 当训练量大于60个句子时，MCD值趋于收敛。 结果表明，就客观衡量而言，基线方法和提出方法具有相似的性能。
 
@@ -164,11 +176,11 @@ $$
 
 ​		在MOS测试中，要求听众以5分制来对转换后的语音的naturalness和clearness进行评分。 MOS测试的结果如图8所示。基线和建议的基于PPG的方法的平均得分分别为3.20和3.87。
 
-<img src="../../arch/images/0121_PPGforM2O/f8_MOS.png" style="zoom:67%;" />
+<img src="/images/0121_PPGforM2O/f8_MOS.png" style="zoom:67%;" />
 
 ​		在ABX偏好测试中，听者被要求选择转换的语句A或B（由两种方法生成）哪一个更像目标的录音$X$，或是没有偏好（觉得差不多的意思）。A和B的每一对都被洗牌以避免优先偏好（preferential bias）。如图9所示，基于PPGs的方法通常优于基线方法。
 
-<img src="../../arch/images/0121_PPGforM2O/f9_ABX.png" style="zoom:67%;" />
+<img src="/images/0121_PPGforM2O/f9_ABX.png" style="zoom:67%;" />
 
 ​		MOS测试和ABX测试结果表明，基于PPGs的方法在语音质量和说话人相似度方面都优于基线方法。可能的原因包括：1）提出的基于PPGs的方法不需要对齐（如DTW），避免了可能的对齐误差带来的影响；2）提出方法的DBLSTM模型仅使用说话人归一化 (speaker-normalized) PPGs和目标说话人(target speaker)的声学特征进行训练。这样可以最大限度地减少来自源说话者(source speaker)信号的干扰.
 
