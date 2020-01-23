@@ -65,10 +65,10 @@
 <meta property="og:image" content="https://seiifuu.github.io/images/0121_PPGforM2O/f8_MOS.png">
 <meta property="og:image" content="https://seiifuu.github.io/images/0121_PPGforM2O/f9_ABX.png">
 <meta property="article:published_time" content="2020-01-22T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-23T07:46:52.651Z">
+<meta property="article:modified_time" content="2020-01-23T08:06:47.062Z">
 <meta property="article:author" content="Fuu">
-<meta property="article:tag" content="voice conversion">
 <meta property="article:tag" content="PPGs">
+<meta property="article:tag" content="voice conversion">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://seiifuu.github.io/images/0121_PPGforM2O/f4_ppgs.png">
 
@@ -241,7 +241,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-01-23 00:00:00 / Modified: 16:46:52" itemprop="dateCreated datePublished" datetime="2020-01-23T00:00:00+09:00">2020-01-23</time>
+              <time title="Created: 2020-01-23 00:00:00 / Modified: 17:06:47" itemprop="dateCreated datePublished" datetime="2020-01-23T00:00:00+09:00">2020-01-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,7 +272,7 @@
 <p>http://www1.se.cuhk.edu.hk/~lfsun/ICME2016_Lifa_Sun.pdf</p>
 </blockquote>
 <h3 id="摘要">0. 摘要</h3>
-<p>这篇文章提出了一种新颖的使用非平行训练数据的声音转换方法。这个想法通过使用由SI-ASR获得的PPGs的均值联系不同的说话者。方法假设PPGs可以代表说话者标准化空间中的语音发音，并且独立于说话者对应的语音内容。提议的方法首先获取目标说话者(target speech)的PPGs。随后使用基于深双向长短期记忆的递归神经网络(DBLSTM)对目标说话者的PPGs与声学特征之间的关系进行建模。为了转换任意的源语音，我们从相同的SI-ARS中获得PPGs，并将其输入一个已训练的DBLSTM中生成转换的语音。我们的方法有两个主要的优点：1）不需要平行的训练数据;2）一个训练模型可以应用在任意源说话者上转换为固定的目标说话者。实验表明，我们的方法与目前最好的系统相比在语音质量和与说话者的相似度上有相当或者更胜的表现。</p>
+<p>这篇文章提出了一种新颖的使用非平行训练数据的声音转换方法。这个想法通过使用由SI-ASR获得的PPGs的均值联系不同的说话者。方法假设PPGs可以代表说话者标准化空间中的语音发音，并且独立于说话者对应的语音内容。提议的方法首先获取目标说话者(target speech)的PPGs。随后使用基于深双向长短期记忆的递归神经网络(DBLSTM)对目标说话者的PPGs与声学特征之间的关系进行建模。为了转换任意的源语音，我们从相同的SI-ARS中获得PPGs，并将其输入一个已训练的DBLSTM中生成转换的语音。我们的方法有两个主要的优点：1）不需要平行的训练数据;2）一个训练模型可以应用在任意源说话者上转换为固定的目标说话者。实验表明，我们的方法与目前最好的系统相比在语音质量和与说话者的相似度上有相当或者更胜的表现。 <a id="more"></a></p>
 <h3 id="图片">00. 图片</h3>
 <p><strong>PPGs</strong></p>
 <p><img src="/images/0121_PPGforM2O/f4_ppgs.png" style="zoom:67%;" /></p>
@@ -475,8 +475,8 @@ MCD[dB] = {\frac{10}{ln10}}\sqrt{2\sum_{d=1}^N (c_d - c_d^converted)^2}
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/voice-conversion/" rel="tag"># voice conversion</a>
               <a href="/tags/PPGs/" rel="tag"># PPGs</a>
+              <a href="/tags/voice-conversion/" rel="tag"># voice conversion</a>
           </div>
 
         
