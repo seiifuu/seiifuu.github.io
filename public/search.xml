@@ -2,12 +2,13 @@
 <search>
   <entry>
     <title>Foreign Accent Conversion by Synthesizing Speech  from Phonetic Posteriorgrams 2019</title>
-    <url>/2020/01/16/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/</url>
+    <url>/2020/01/17/Foreign%20Accent%20Conversion%20by%20Synthesizing%20Speech%20%20from%20Phonetic%20Posteriorgrams/</url>
     <content><![CDATA[<h2 id="foreign-accent-conversion-by-synthesizing-speech-from-phonetic-posteriorgrams-2019.7">Foreign Accent Conversion by Synthesizing Speech from Phonetic Posteriorgrams 2019.7</h2>
 <blockquote>
 <p>[译]从PPGs合成语音进行外国口音转换</p>
 <p>https://www.semanticscholar.org/paper/Foreign-Accent-Conversion-by-Synthesizing-Speech-Zhao-Ding/8386d03827eabc8446883cd16e46ef10d3d318d4</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="摘要">0. 摘要</h3>
 <p>外国人口音转换(FAC)目标是生成一个语音听起来与被给的非母语者相似，但是拥有母语者的口音。过去的FAC方法在合成时借用了来自参考语句(母语)的激励信息（F0 and aperiodicity; pro-duced by a conventional vocoder）。使用这样的方法，合成的声音保留了母语者声音质量的一些方面。我们展示了一种方法，摒弃了过去使用的Vocoder与母语者的激励(excitation)。我们的方法使用一个在母语者语料上训练的声学模型用于抽取独立于说话者(Speaker-independent)的PPGs，而后训练一个语音合成器将来自非母语者的PPGs映射到对应的谱特征上，该谱特征可以通过一个高质量的神经Vocoder依次转换为声音波形。运行时，我们使用从母语者语句中抽取的PPGs作为参照驱动合成器<sup>{1}</sup>。听力测试表明，与基线系统相比，该系统产生的语音更清晰、更自然、更接近非母语者，同时显著降低了非母语者的感知外国口音。</p>
 <blockquote>
@@ -27,7 +28,7 @@
 <p>{1} In the context of FAC, we use <strong>voice quality</strong> to refer solely the organic aspects of a speaker’s voice, e.g., pitch range, vo-cal tract dimensions.</p>
 <p>{注} FAC的三种传统方法：语音变形[3，6-8]、帧配对[1，9]和发音合成[2，10-12]</p>
 </blockquote>
-<p>在这项工作中，我们建议在不依赖说话者的语音丰富语音嵌入--语音后验图（PPGs）中执行FAC[13]。<u>PPG被定义为每一个语音帧属于一组预先定义好的音素单元 (phonemes or triphones/senones)的后验概率，其包含了语句的语言信息和语音信息。</u> 我们的方法具体工作如下。==第一步==，我们使用独立于说话者的在大型母语语音基础上训练的声学模型为非母语者生成一个PPGs。==随后，==我们构建一个Seq2Seq的语音合成器用于抓取非母语者的音质。这个合成器使用来自非母语者的PPGs序列作为输入，处理得到对应的梅尔谱图(Mel-spectrogram)作为输出。==最后，==我们训练一个神经语音编码器(Vocoder)，WaveGlow，用于将梅尔谱图转化为原始的声学信号。{!!}在测试中，我们向合成器中输入一个来自<u>母语者</u>的PPG序列。输出结果包含母语者的发音模式以及非母语者的音质。提出系统的工作流程总览见Figure 1。</p>
+<p>在这项工作中，我们建议在不依赖说话者的语音丰富语音嵌入--语音后验图（PPGs）中执行FAC[13]。<u>PPG被定义为每一个语音帧属于一组预先定义好的音素单元 (phonemes or triphones/senones)的后验概率，其包含了语句的语言信息和语音信息。</u> 我们的方法具体工作如下。第一步，我们使用独立于说话者的在大型母语语音基础上训练的声学模型为非母语者生成一个PPGs。随后，我们构建一个Seq2Seq的语音合成器用于抓取非母语者的音质。这个合成器使用来自非母语者的PPGs序列作为输入，处理得到对应的梅尔谱图(Mel-spectrogram)作为输出。最后，我们训练一个神经语音编码器(Vocoder)，WaveGlow，用于将梅尔谱图转化为原始的声学信号。{!!}在测试中，我们向合成器中输入一个来自<u>母语者</u>的PPG序列。输出结果包含母语者的发音模式以及非母语者的音质。提出系统的工作流程总览见Figure 1。</p>
 <blockquote>
 <p>{!!}如果是这样的系统根本没法做到直接去使用</p>
 <p>{注} 也就是说整个训练过程都是一个对说话者音质的建模</p>
@@ -142,30 +143,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/01/15/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<blockquote>
-<p>搭建教程 https://cloud.tencent.com/developer/article/1516761 如何将源码上传到分支 https://blog.csdn.net/qq_27437967/article/details/7118957</p>
-</blockquote>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Manjaro command line</title>
-    <url>/2020/01/15/command/</url>
+    <url>/2020/01/16/command/</url>
     <content><![CDATA[<h2 id="command-line">Command Line</h2>
 <ul>
 <li>列出目录下的所有文件夹的及文件，规整
@@ -183,6 +162,7 @@
 </ul></li>
 <li>smb://ganglion/disk1</li>
 </ul>
+<a id="more"></a>
 <h2 id="docker">Docker</h2>
 <p><a href="https://wiki.archlinux.org/index.php/Docker_(简体中文)" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Docker_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
 <p>https://zhuanlan.zhihu.com/p/65696014</p>
@@ -310,5 +290,27 @@
       <tags>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/01/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<blockquote>
+<p>搭建教程 https://cloud.tencent.com/developer/article/1516761 如何将源码上传到分支 https://blog.csdn.net/qq_27437967/article/details/7118957</p>
+</blockquote>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
   </entry>
 </search>
