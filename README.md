@@ -6,6 +6,8 @@
 3. **(Github)**              Commit the .md and pic to Github ->hexo /source/_posts and /source/images
 4. **(Server PC)**           exe. pull_.sh and hexo s for preview or exe. deploy.sh for deploy blog.
 
+Note: you can't push a emtpy folder
+
 ## _post head
 ```
 ----
