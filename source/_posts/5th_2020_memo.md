@@ -5,7 +5,7 @@ tag:
 - Linux 
 - tendorflow
 - kaggle
-categories
+categories:
 - week_memo
 ---
 
